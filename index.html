@@ -26,6 +26,30 @@
           </div>
 
           <!-- event details -->
+          <div class="tab">
+            <h2>Event Details</h2>
+            <label for="event">Select Event:</label>
+            <select id="event" name="event" required>
+              <option value="conference">Conference</option>
+              <option value="workshop">Workshop</option>
+              <option value="webinar">Webinar</option>
+            </select>
+            <label for="date">Event Date:</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+
+          <!-- confirmation -->
+          <div class="tab">
+            <h2>Confirm Your Details</h2>
+            <p><strong>First Name:</strong> <span id="confirmFname"></span></p>
+            <p><strong>Last Name:</strong> <span id="confirmLname"></span></p>
+            <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
+            <p><strong>Event:</strong> <span id="confirmEvent"></span></p>
+            <p><strong>Date:</strong> <span id="confirmDate"></span></p>
+          </div>
+
+          <!-- button -->
+           
       </form>
      </div>
  </body>
