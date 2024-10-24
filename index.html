@@ -1,56 +1,66 @@
 <!-- Design a multi-step form for event registration using HTML and CSS. -->
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
- </head>
- <body>
-    <!-- container -->
-     <div class="form-container">
-      <form id="RegForm">
-         <h1>Event Ragistration</h1>
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="regForm">
+            <h1>Event Registration</h1>
+            
+            <!-- Step 1: Personal Details -->
+            <div class="tab">
+                <h2>Personal Details</h2>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
+                
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
 
-         <!-- personal information -->
-          <div class="tab">
-            <h2>Personal Information</h2>
-            <label for="fname">First Name:</label>
-            <input type="text" id="fname" name="fname" required>
+            <!-- Step 2: Event Selection -->
+            <div class="tab">
+                <h2>Select Event</h2>
+                <label for="event">Choose your event:</label>
+                <select id="event" name="event" required>
+                    <option value="workshop">Workshop</option>
+                    <option value="webinar">Webinar</option>
+                    <option value="conference">Conference</option>
+                </select>
+                
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
 
-            <label for="lname">Last Name:</label>
-            <input type="text" id="lname" name="lname" required>
+            <!-- Step 3: Confirmation -->
+            <div class="tab">
+                <h2>Confirmation</h2>
+                <p>Review your details and click "Submit" to complete your registration.</p>
+                <div class="summary">
+                    <p><strong>First Name:</strong> <span id="summaryFname"></span></p>
+                    <p><strong>Last Name:</strong> <span id="summaryLname"></span></p>
+                    <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+                    <p><strong>Event:</strong> <span id="summaryEvent"></span></p>
+                    <p><strong>Date:</strong> <span id="summaryDate"></span></p>
+                </div>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
+            <!-- Navigation Buttons -->
+            <div class="buttons">
+                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+        </form>
+    </div>
 
-          <!-- event details -->
-          <div class="tab">
-            <h2>Event Details</h2>
-            <label for="event">Select Event:</label>
-            <select id="event" name="event" required>
-              <option value="conference">Conference</option>
-              <option value="workshop">Workshop</option>
-              <option value="webinar">Webinar</option>
-            </select>
-            <label for="date">Event Date:</label>
-            <input type="date" id="date" name="date" required>
-          </div>
-
-          <!-- confirmation -->
-          <div class="tab">
-            <h2>Confirm Your Details</h2>
-            <p><strong>First Name:</strong> <span id="confirmFname"></span></p>
-            <p><strong>Last Name:</strong> <span id="confirmLname"></span></p>
-            <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
-            <p><strong>Event:</strong> <span id="confirmEvent"></span></p>
-            <p><strong>Date:</strong> <span id="confirmDate"></span></p>
-          </div>
-
-          <!-- button -->
-           
-      </form>
-     </div>
- </body>
- </html>
+    <script src="script.js"></script>
+</body>
+</html>
+    
